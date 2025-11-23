@@ -1,0 +1,298 @@
+/*
+ Estilos globales para la Tienda de Baloncesto
+ */
+
+:root {
+    --color-primary: #FF5722; /* Naranja Baloncesto */
+    --color-secondary: #000000;
+    --color-accent: #FFFFFF;
+    --color-bg: #f4f4f9;
+    --font-family: 'Arial', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg);
+    color: var(--color-secondary);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: var(--color-secondary);
+    color: var(--color-accent);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+/* Navegación principal */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--color-accent);
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+/* Estilos del menú desplegable */
+#user-menu-dropdown {
+    background-color: var(--color-accent);
+    color: var(--color-secondary);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 160px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; 
+}
+
+#user-menu-dropdown a {
+    padding: 10px;
+    display: block;
+    color: var(--color-secondary);
+    font-weight: normal;
+    text-transform: none;
+}
+
+#user-menu-dropdown a:hover {
+    background-color: #eee;
+    color: var(--color-primary);
+}
+
+/* Contenido principal */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 70vh;
+}
+
+h1, h2 {
+    text-align: center;
+    color: var(--color-secondary);
+}
+
+/* Estilos para mensajes del formulario del registro */
+.message { padding: 10px; margin-bottom: 20px; border-radius: 4px; font-weight: bold; text-align: center;}
+.message.success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.message.error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+/* Estilos de vistas */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.category-card, .product-card {
+    display: block;
+    background-color: var(--color-accent);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover, .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-card-content, .product-card-content {
+    padding: 15px;
+}
+
+.category-card img, .product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    background-color: #e8e8e8;
+}
+
+/* Estilos para los detalle de los productos */
+#product-detail-container {
+    display: flex;
+    gap: 40px;
+    padding: 30px;
+    background-color: var(--color-accent);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+#product-detail-container img {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+#product-info {
+    width: 60%;
+}
+
+#product-info h2 {
+    text-align: left;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.price {
+    font-size: 1.8em;
+    color: var(--color-primary);
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.add-to-cart-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.add-to-cart-form input[type="number"] {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e64a19;
+}
+
+/* formulario de registro/login */
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--color-accent);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+
+/* Footer y Responsive */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 1px solid #ddd;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    main {
+        padding: 20px 10px;
+    }
+
+    #product-detail-container {
+        flex-direction: column;
+    }
+
+    #product-detail-container img, #product-info {
+        width: 100%;
+    }
+}
